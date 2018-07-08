@@ -15,6 +15,19 @@ module.exports = {
     contentBase: path.appDist,
     hot: true,
   },
+  optimization: {
+    runtimeChunk: true,
+    splitChunks: {
+      automaticNameDelimiter: '-',
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        },
+      },
+    },
+  },
   plugins: [
     new CleanWebpackPlugin(['dist'], {
       root: path.app,
