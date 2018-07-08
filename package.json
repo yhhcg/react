@@ -1,0 +1,15 @@
+{
+  "name": "summary-pro-react",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:yhhcg/summary-pro-react.git",
+  "private": true,
+  "author": "yhhcg",
+  "license": "MIT",
+  "dependencies": {},
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 10"
+  ]
+}
