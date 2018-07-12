@@ -11,6 +11,14 @@ module.exports = {
     filename: 'js/[name].[hash].js',
     path: path.appDist,
   },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        loaders: ['babel-loader'],
+      },
+    ],
+  },
   devServer: {
     contentBase: path.appDist,
     hot: true,
