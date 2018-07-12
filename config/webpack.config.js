@@ -33,6 +33,9 @@ module.exports = {
       root: path.app,
     }),
     new HtmlWebpackPlugin({
+      appMountId: 'app',
+      inject: false,
+      template: require('html-webpack-template'),
       title: 'Summary-pro-react',
     }),
     new webpack.HotModuleReplacementPlugin(), // HMR Plugin
