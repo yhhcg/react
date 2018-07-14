@@ -4,14 +4,17 @@ import {
   Route,
 } from 'react-router-dom';
 
+import AppFrame from './appFrame';
 import Login from './login';
 
 class Router extends React.Component {
   render() {
     return (
-      <BrowserRouter>
-        <Route exact path='/' component={Login} />
-      </BrowserRouter>
+      <AppFrame>
+        <BrowserRouter>
+          <Route exact path='/' component={Login} />
+        </BrowserRouter>
+      </AppFrame>
     );
   }
 }
