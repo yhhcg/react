@@ -22,6 +22,7 @@ module.exports = {
   devServer: {
     contentBase: path.appDist,
     hot: true,
+    historyApiFallback: true,
   },
   optimization: {
     runtimeChunk: true,
