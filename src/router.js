@@ -9,6 +9,9 @@ import AppFrame from './appFrame';
 import Home from './home';
 import Login from './login';
 
+// <Switch> is unique in that it only renders one route.
+// When exact is true, will only match
+// if the path matches the location.pathname exactly.
 class Router extends React.Component {
   render() {
     return (

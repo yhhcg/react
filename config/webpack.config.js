@@ -22,7 +22,7 @@ module.exports = {
   devServer: {
     contentBase: path.appDist,
     hot: true,
-    historyApiFallback: true,
+    historyApiFallback: true, // Using the HTML5 History API
   },
   optimization: {
     runtimeChunk: true,
