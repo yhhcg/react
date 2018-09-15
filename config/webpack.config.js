@@ -50,4 +50,9 @@ module.exports = {
     }),
     new webpack.HotModuleReplacementPlugin(), // HMR Plugin
   ],
+  resolve: {
+    alias: {
+      Common: path.appCommon,
+    },
+  },
 };
