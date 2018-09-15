@@ -1,5 +1,4 @@
 import React from 'react';
-import CssBaseline from '@material-ui/core/CssBaseline';
 
 class AppFrame extends React.Component {
   constructor(props) {
@@ -12,14 +11,12 @@ class AppFrame extends React.Component {
     } = this.props;
 
     return (
-      <CssBaseline>
+      <div>
+        AppFrame
         <div>
-          AppFrame
-          <div>
-            {children}
-          </div>
-        </div>        
-      </CssBaseline>
+          {children}
+        </div>
+      </div>
     );
   }
 }
