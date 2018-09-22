@@ -18,6 +18,51 @@ module.exports = {
         include: path.appSrc,
         loaders: ['babel-loader'],
       },
+      /**
+       * Style-loader: Adds CSS to the DOM by injecting a <style> tag
+       * Css-loader: Translates CSS into CommonJS
+       * Postcss-loader: Use autoprefixer to parse CSS and add vendor
+       *                 prefixes to CSS rules using values. 
+       * Less-loader: Compiles Less to CSS
+       */
+      {
+        test: /\.less$/,
+        include: path.appSrc,
+        use: [
+          {
+            loader: 'style-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              // Dashes in class names will be camelized, the original
+              // class name will be removed from the locals.
+              camelCase: 'dashesOnly',
+              localIdentName: '[folder]-[local]-[path]-[hash:base64:5]',
+              modules: true,
+              sourceMap: true,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              config: {
+                path: path.postcssConfig,
+              },
+              sourceMap: true,
+            },
+          },
+          {
+            loader: 'less-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+        ],
+      },
     ],
   },
   devServer: {
