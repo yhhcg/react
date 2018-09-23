@@ -6,6 +6,7 @@ import {
 import CssBaseline from 'Common/CssBaseline';
 import Nav from 'Common/Nav';
 import classes from './index.less';
+import logoIcon from './logo.png';
 
 class AppFrame extends React.Component {
   nav = [{
@@ -30,7 +31,8 @@ class AppFrame extends React.Component {
         <CssBaseline />
         <div className={classes.root}>
           <div className={classes.header}>
-            <Nav data={this.nav}/>
+            <img className={classes.logo} src={logoIcon} />
+            <Nav data={this.nav} />
           </div>
           <div>
             {children}
