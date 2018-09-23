@@ -63,6 +63,21 @@ module.exports = {
           },
         ],
       },
+      /**
+       * Transforms files into base64 URIs.
+       */
+      {
+        test: /\.(png|jpg|gif)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+              name: 'images/[name].[hash].[ext]',
+            },
+          },
+        ]
+      },
     ],
   },
   devServer: {
