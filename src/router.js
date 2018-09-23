@@ -5,7 +5,7 @@ import {
   Switch,
 } from 'react-router-dom';
 
-import AppFrame from './appFrame';
+import AppFrame from './AppFrame';
 import Home from './home';
 import Login from './login';
 
