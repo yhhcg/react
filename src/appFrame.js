@@ -1,4 +1,9 @@
-import React from 'react';
+import {
+  default as React,
+  Fragment,
+} from 'react';
+
+import CssBaseline from 'Common/CssBaseline';
 
 class AppFrame extends React.Component {
   constructor(props) {
@@ -11,12 +16,15 @@ class AppFrame extends React.Component {
     } = this.props;
 
     return (
-      <div>
-        AppFrame
+      <Fragment>
+        <CssBaseline />
         <div>
-          {children}
+          AppFrame
+          <div>
+            {children}
+          </div>
         </div>
-      </div>
+      </Fragment>
     );
   }
 }
