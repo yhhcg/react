@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   arrayOf,
+  func,
   shape,
   string,
 } from 'prop-types';
@@ -13,10 +14,19 @@ class Nav extends React.Component {
       id: string.isRequired,
       name: string.isRequired,
     })),
+    onClick: func,
   };
 
   static defaultProps = {
     data: [],
+  };
+
+  handleClick = (item) => () => {
+    const {
+      onClick,
+    } = this.props;
+
+    onClick && onClick(item);
   };
 
   render() {
@@ -29,7 +39,12 @@ class Nav extends React.Component {
         <ul>
           {
             data.map((item) => (
-              <li key={item.id}>{item.name}</li>
+              <li
+                key={item.id}
+                onClick={this.handleClick(item)}
+              >
+                {item.name}
+              </li>
             ))
           }
         </ul>
