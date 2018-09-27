@@ -113,6 +113,7 @@ module.exports = {
   resolve: {
     alias: {
       Common: path.appCommon,
+      Pages: path.appPages,
     },
   },
 };
