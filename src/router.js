@@ -15,14 +15,14 @@ import Login from './login';
 class Router extends React.Component {
   render() {
     return (
-      <AppFrame>
-        <BrowserRouter>
-          <Switch>
-            <Route exact path='/' component={Login} />
+      <BrowserRouter>
+        <Switch>
+          <Route exact path='/' component={Login} />
+          <AppFrame>
             <Route exact path='/home' component={Home} />
-          </Switch>
-        </BrowserRouter>
-      </AppFrame>
+          </AppFrame>
+        </Switch>
+      </BrowserRouter>
     );
   }
 }
