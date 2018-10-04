@@ -10,7 +10,7 @@ class Login extends React.Component {
         <div className={classes.loginBox}>
           <TextField label="Username" />
           <TextField label="Password" type="password"/>
-          <Button name="登录" />
+          <Button name="登 录" />
         </div>
       </div>
     );
