@@ -105,6 +105,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       appMountId: 'app',
       inject: false,
+      meta: [{
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1',
+      }],
       template: require('html-webpack-template'),
       title: 'Summary-pro-react',
     }),
