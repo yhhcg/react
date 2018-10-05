@@ -16,9 +16,11 @@ class AppFrame extends React.Component {
   nav = [{
     id: 'home',
     name: '首页',
+    path: '/home',
   }, {
     id: 'list',
     name: '任务管理',
+    path: '/list',
   }];
 
   constructor(props) {
@@ -33,7 +35,7 @@ class AppFrame extends React.Component {
     };
   }
 
-  handleNavClick = ({id}) => {
+  handleNavClick = ({id, path}) => {
     const {
       history,
     } = this.props;
@@ -43,7 +45,7 @@ class AppFrame extends React.Component {
       selectedId: id,
     });
 
-    history.push(`/${id}`);
+    history.push(path);
   };
 
   render() {
