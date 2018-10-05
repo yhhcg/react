@@ -5,7 +5,7 @@ import {
   shape,
   string,
 } from 'prop-types';
-
+import classNames from 'classnames';
 import classes from './index.less';
 
 class Nav extends React.Component {
@@ -15,6 +15,7 @@ class Nav extends React.Component {
       name: string.isRequired,
     })),
     onClick: func,
+    selectedId: string,
   };
 
   static defaultProps = {
@@ -32,6 +33,7 @@ class Nav extends React.Component {
   render() {
     const {
       data,
+      selectedId,
     } = this.props;
 
     return (
@@ -40,6 +42,9 @@ class Nav extends React.Component {
           {
             data.map((item) => (
               <li
+                className={classNames({
+                  [classes.selected]: item.id === selectedId,
+                })}
                 key={item.id}
                 onClick={this.handleClick(item)}
               >
