@@ -1,7 +1,10 @@
-import {
-  default as React,
+import React, {
   Fragment,
 } from 'react';
+import {
+  node,
+  object,
+} from 'prop-types';
 import {withRouter} from 'react-router'
 import CssBaseline from 'Common/CssBaseline';
 import Nav from 'Common/Nav';
@@ -9,8 +12,10 @@ import classes from './index.less';
 import logoIcon from './logo.png';
 
 class AppFrame extends React.Component {
-  state = {
-    selectedId: '',
+  static propTypes = {
+    children: node,
+    history: object,
+    location: object,
   };
 
   nav = [{
@@ -41,7 +46,6 @@ class AppFrame extends React.Component {
     } = this.props;
 
     this.setState({
-      ...this.state,
       selectedId: id,
     });
 
@@ -62,7 +66,11 @@ class AppFrame extends React.Component {
         <CssBaseline />
         <div className={classes.root}>
           <div className={classes.header}>
-            <img className={classes.logo} src={logoIcon} />
+            <img
+              alt=""
+              className={classes.logo}
+              src={logoIcon}
+            />
             <Nav
               data={this.nav}
               onClick={this.handleNavClick}
