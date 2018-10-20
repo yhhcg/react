@@ -110,7 +110,7 @@ module.exports = {
         content: 'width=device-width, initial-scale=1',
       }],
       template: require('html-webpack-template'),
-      title: 'Summary-pro-react',
+      title: 'react',
     }),
     new webpack.HotModuleReplacementPlugin(), // HMR Plugin
   ],
